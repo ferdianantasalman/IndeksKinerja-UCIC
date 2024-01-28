@@ -13,6 +13,7 @@
                             <th>User</th>
                             <th>Nilai</th>
                             <th>Pertanyaan</th>
+                            {{-- <th>Jawaban</th> --}}
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -27,6 +28,7 @@
                                         <span>{{ $question->question_text }}, </span>
                                     @endforeach
                                 </td>
+                                {{-- <td>{{ $result->options }}</td> --}}
                                 {{-- <td>
                                     @foreach ($result->questions as $key => $question)
                                         <span class="badge badge-info">{{ $question->question_text }}</span>
@@ -37,9 +39,9 @@
                                         <a href="{{ route('results.show', $result->id) }}" class="btn btn-success">
                                             <i class="fa fa-eye"></i>
                                         </a>
-                                        <a href="{{ route('results.edit', $result->id) }}" class="btn btn-info">
+                                        {{-- <a href="{{ route('results.edit', $result->id) }}" class="btn btn-info">
                                             <i class="fa fa-pencil-alt"></i>
-                                        </a>
+                                        </a> --}}
                                         <form onclick="return confirm('are you sure ? ')" class="d-inline"
                                             action="{{ route('results.destroy', $result->id) }}" method="POST">
                                             @csrf

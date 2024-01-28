@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->id();
+            $table->string('category');
             $table->foreignIdFor(User::class)->constrained()->cascadeOnUpdate();
             $table->integer('total_points')->nullable();
             $table->timestamps();

@@ -19,19 +19,19 @@
         <div class="navbar-nav w-100">
             <a href="/dosen/dashboard" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-            <a href="/dosen/jenjangpendidikan" class="nav-item nav-link active"><i
+            <a href="{{ route('dosen.result.pendidikan') }}" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Pendidikan</a>
-            <a href="/dosen/jenjangfungsional" class="nav-item nav-link active"><i
+            <a href="{{ route('dosen.result.fungsional') }}" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Fungsional</a>
-            <a href="{{ route('dosen.test') }}" class="nav-item nav-link active"><i
+            <a href="{{ route('dosen.result') }}" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Pengajaran</a>
-            <a href="{{ route('dosen.test') }}" class="nav-item nav-link active"><i
+            <a href="{{ route('dosen.result') }}" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Penelitian</a>
-            <a href="{{ route('dosen.test') }}" class="nav-item nav-link active"><i
+            <a href="{{ route('dosen.result') }}" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Pengabdian</a>
-            <a href="{{ route('dosen.test') }}" class="nav-item nav-link active"><i
+            <a href="{{ route('dosen.result') }}" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Tambahan-Test</a>
-            <a href="{{ route('dosen.test') }}" class="nav-item nav-link active"><i
+            <a href="{{ route('dosen.result') }}" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Hasil</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i

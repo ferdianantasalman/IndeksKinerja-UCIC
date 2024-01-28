@@ -24,8 +24,7 @@
                                 <td>
                                     <div class="btn-group btn-group-sm">
                                         <a href="{{ route('questions.edit', $ct->id) }}"
-                                            class="btn btn-square btn-primary m-2"><i
-                                                class="fa fa-pen"></i>{{ $ct->id }}</a>
+                                            class="btn btn-square btn-primary m-2"><i class="fa fa-pen"></i></a>
                                         <form action="{{ route('questions.destroy', $ct->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')

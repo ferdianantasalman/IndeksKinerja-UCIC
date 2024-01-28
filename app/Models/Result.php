@@ -16,8 +16,18 @@ class Result extends Model
         return $this->belongsTo(User::class);
     }
 
+    // public function resultCategories()
+    // {
+    //     return $this->hasMany(Category::class);
+    // }
+
     public function questions()
     {
         return $this->belongsToMany(Question::class)->withPivot(['option_id', 'points']);
+    }
+
+    public function options()
+    {
+        return $this->belongsToMany(Option::class);
     }
 }

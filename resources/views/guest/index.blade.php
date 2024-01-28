@@ -36,7 +36,9 @@
     <link href="{{ asset('assets_landing/vendors/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets_landing/assets/css/theme.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets_landing/assets/css/user.min.css') }}" rel="stylesheet" />
+
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 <body>
     <!-- ===============================================-->
@@ -62,6 +64,7 @@
                 </div>
             </div>
         </nav>
+
         <div class="bg-dark"><img class="img-fluid position-absolute end-0"
                 src="{{ asset('assets_landing/assets/img/hero/hero-bg.png') }}" alt="" />
 
@@ -71,15 +74,19 @@
                 <div class="container">
                     <div class="row align-items-center py-lg-8 py-6">
                         <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white fs-5 fs-xl-6">Save time by building fast with Boldo Template</h1>
+                            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                            {{-- <h1 class="text-white fs-5 fs-xl-6">Save time by building fast with Boldo Template</h1>
                             <p class="text-white py-lg-3 py-2">Funding handshake buyer business-to-business metrics iPad
                                 partnership. First mover advantage innovator success deployment non-disclosure.</p>
                             <div class="d-sm-flex align-items-center gap-3"><button
                                     class="btn btn-success text-black mb-3 w-75">Buy Template</button><button
-                                    class="btn btn-outline-light mb-3 w-75">Explore</button></div>
+                                    class="btn btn-outline-light mb-3 w-75">Explore</button></div> --}}
                         </div>
-                        <div class="col-lg-6 text-center text-lg-end mt-3 mt-lg-0"><img class="img-fluid"
-                                src="{{ asset('assets_landing/assets/img/hero/hero-graphics.png') }}" alt="" />
+                        <div class="col-lg-6 text-center text-lg-end mt-3 mt-lg-0">
+                            <canvas id="otherChart" style="width:100%;max-width:600px"></canvas>
+
+                            {{-- <img class="img-fluid"
+                                src="{{ asset('assets_landing/assets/img/hero/hero-graphics.png') }}" alt="" /> --}}
                         </div>
                     </div>
                     <div class="swiper">
@@ -544,7 +551,74 @@
     </section><!-- <section> close ============================-->
     <!-- ============================================-->
 
+    <script>
+        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = [
+            "#b91d47",
+            "#00aba9",
+            "#2b5797",
+            "#e8c3b9",
+            "#1e7145"
+        ];
 
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "World Wide Wine Production 2018",
+                }
+            }
+        });
+
+        new Chart("otherChart", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "World Wide Wine Production 2018"
+                }
+            }
+        });
+    </script>
+
+    {{-- <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script> --}}
 
     <!-- ===============================================-->
     <!--    JavaScripts-->

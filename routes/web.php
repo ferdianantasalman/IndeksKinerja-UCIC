@@ -83,10 +83,25 @@ Route::group(['middleware' => 'auth'], function () {
     Route::prefix('dosen')->middleware('roleAs:dosen')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'dosen']);
 
-        // Text
-        Route::get('/test', [TestController::class, 'index'])->name('dosen.test');
+
+        // Result
+        Route::get('/result', [TestController::class, 'index'])->name('dosen.result');
+        Route::get('/result_pendidikan', [TestController::class, 'index_jenjang_pendidikan'])->name('dosen.result.pendidikan');
+        Route::get('/result_fungsional', [TestController::class, 'index_jenjang_fungsional'])->name('dosen.result.fungsional');
+        Route::get('/result/{result_id}', [TestController::class, 'show'])->name('dosen.result.show');
+        // Route::resource('results', ResultController::class);
+
+        // Test UI
+        Route::get('/test', [TestController::class, 'test'])->name('dosen.test');
+        Route::get('/test_pendidikan', [TestController::class, 'test_jenjang_pendidikan'])->name('dosen.test.pendidikan');
+        Route::get('/test_fungsional', [TestController::class, 'test_jenjang_fungsional'])->name('dosen.test.fungsional');
+        // Test Store
         Route::post('/test', [TestController::class, 'store'])->name('dosen.test.store');
-        Route::get('/results/{result_id}', [ResultController::class, 'show'])->name('dosen.results.show');
+        Route::post('/test_pendidikan', [TestController::class, 'store_jenjang_pendidikan'])->name('dosen.test.store.pendidikan');
+        Route::post('/test_fungsional', [TestController::class, 'store_jenjang_fungsional'])->name('dosen.test.store.fungsional');
+
+        // Delete
+        Route::delete('/result_destroy/{result_id}', [TestController::class, 'destroy'])->name('dosen.result.destroy');
 
         Route::resource('/jenjangpendidikan', JenjangPendidikanController::class);
         Route::resource('/jenjangfungsional', JenjangFungsionalController::class);

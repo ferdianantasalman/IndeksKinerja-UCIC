@@ -4,44 +4,53 @@
     <div class="container-fluid pt-4 px-4">
         <div class="col-12">
             <div class="bg-light rounded h-100 p-4">
-                <h5 class="mb-4">Jenjang Pendidikan</h5>
-                <a href="jenjangpendidikan/create" class="btn btn-outline-primary mb-2">Nilai</a>
+                <h5 class="mb-4">Hasil Pendidikan</h5>
+                <a href="/dosen/test_pendidikan" class="btn btn-outline-primary mb-2">Mulai Survey</a>
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Jenjang</th>
-                            <th>Point</th>
-                            <th>Tahun</th>
-                            <th>Semester</th>
+                            <th>User</th>
+                            <th>Nilai</th>
+                            <th>Pertanyaan</th>
+                            {{-- <th>Jawaban</th> --}}
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($jenjang_pendidikan as $jf)
+                        @foreach ($results as $result)
                             <tr>
                                 <td>{{ $loop->index + 1 }}.</td>
-                                <td>{{ $jf->jenjang }}</td>
-                                <td>{{ $jf->point }}</td>
-                                <td>{{ $jf->tahun }}</td>
-                                <td>{{ $jf->semester }}</td>
+                                <td>{{ $result->user->name }}</td>
+                                <td>{{ $result->total_points }}</td>
                                 <td>
-                                    <div class="m-n2">
-                                        <a href="{{ route('jenjangfungsional.edit', $jf->id) }}"
-                                            class="btn btn-square btn-primary m-2"><i
-                                                class="fa fa-pen"></i>{{ $jf->id }}</a>
-                                        {{-- <form action="{{ route('bobotnilai.destroy', $jf->id) }}" method="POST">
+                                    @foreach ($result->questions as $question)
+                                        <span>{{ $question->question_text }}, </span>
+                                    @endforeach
+                                </td>
+                                {{-- <td>{{ $result->options }}</td> --}}
+                                {{-- <td>
+                                    @foreach ($result->questions as $key => $question)
+                                        <span class="badge badge-info">{{ $question->question_text }}</span>
+                                    @endforeach
+                                </td> --}}
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        <a href="{{ route('dosen.result.show', $result->id) }}" class="btn btn-success">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                        {{-- <a href="{{ route('results.edit', $result->id) }}" class="btn btn-info">
+                                            <i class="fa fa-pencil-alt"></i>
+                                        </a> --}}
+                                        <form onclick="return confirm('yakin ingin menghapus ? ')" class="d-inline"
+                                            action="{{ route('dosen.result.destroy', $result->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit"
-                                                onclick="javascript: return confirm('Apakah anda yakin ingin menghapus data ini ?')"
-                                                class="btn btn-square btn-primary m-2">
+                                            <button class="btn btn-danger"
+                                                style="border-top-left-radius: 0;border-bottom-left-radius: 0;">
                                                 <i class="fa fa-trash"></i>
                                             </button>
-                                        </form> --}}
-                                        <a href="{{ route('jenjangfungsional.destroy', $jf->id) }}"
-                                            data-confirm-delete="true" class="btn btn-square btn-primary m-2"><i
-                                                class="fa fa-trash"></i></a>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>
