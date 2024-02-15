@@ -30,31 +30,20 @@
             <a href="/admin/results" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Hasil</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                        class="fa fa-laptop me-2"></i>Hasil Dosen</a>
+                        class="fa fa-laptop me-2"></i>Pendidikan</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="button.html" class="dropdown-item">Jenjang Pendidikan</a>
-                    <a href="button.html" class="dropdown-item">Jenjang Fungsional</a>
-                    <a href="button.html" class="dropdown-item">Pengajaran</a>
-                    <a href="button.html" class="dropdown-item">Penelitian</a>
-                    <a href="button.html" class="dropdown-item">Pengabdian 5</a>
+                    <a href="/admin/jenjang_pendidikan/questions" class="dropdown-item">Pertanyaan</a>
+                    <a href="button.html" class="dropdown-item">Jawaban</a>
+                    <a href="button.html" class="dropdown-item">Hasil</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                        class="fa fa-laptop me-2"></i>Hasil Prodi</a>
+                        class="fa fa-laptop me-2"></i>Fungsional</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="button.html" class="dropdown-item">Pertanyaan Variabel 1</a>
-                    <a href="button.html" class="dropdown-item">Pertanyaan Variabel 2</a>
-                    <a href="button.html" class="dropdown-item">Pertanyaan Variabel 6</a>
-                </div>
-            </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                        class="fa fa-laptop me-2"></i>Hasil Universitas</a>
-                <div class="dropdown-menu bg-transparent border-0">
-                    <a href="button.html" class="dropdown-item">Pertanyaan Variabel 1</a>
-                    <a href="button.html" class="dropdown-item">Pertanyaan Variabel 2</a>
-                    <a href="button.html" class="dropdown-item">Pertanyaan Variabel 3</a>
+                    <a href="/admin/jenjang_fungsional/questions" class="dropdown-item">Pertanyaan</a>
+                    <a href="button.html" class="dropdown-item">Jawaban</a>
+                    <a href="button.html" class="dropdown-item">Hasil</a>
                 </div>
             </div>
         </div>

@@ -29,7 +29,7 @@ Route::get('/', function () {
 
 
 Route::middleware('guest')->group(function () {
-    // Landing 
+    // Landing
     Route::get('/', [HomeController::class, 'landing']);
 
 
@@ -66,6 +66,34 @@ Route::group(['middleware' => 'auth'], function () {
         // results
         Route::resource('results', ResultController::class);
         Route::delete('results_mass_destroy', [ResultController::class, 'massDestroy'])->name('results.mass_destroy');
+
+        // =========== Jenjang Pendidikan ==========
+        // questions
+        Route::get('jenjang_pendidikan/questions', [QuestionController::class, 'index_jenjang_pendidikan'])->name('jenjang_pendidikan.questions');
+        Route::get('jenjang_pendidikan/questions/create', [QuestionController::class, 'create_jenjang_pendidikan'])->name('jenjang_pendidikan.questions.create');
+        Route::post('jenjang_pendidikan/questions', [QuestionController::class, 'store_jenjang_pendidikan'])->name('jenjang_pendidikan.questions.store');
+        Route::get('jenjang_pendidikan/{question}/edit', [QuestionController::class, 'edit_jenjang_pendidikan'])->name('jenjang_pendidikan.questions.edit');
+        Route::put('jenjang_pendidikan/questions/{question}', [QuestionController::class, 'update_jenjang_pendidikan'])->name('jenjang_pendidikan.questions.update');
+        Route::delete('jenjang_pendidikan/questions/{question}', [QuestionController::class, 'destroy_jenjang_pendidikan'])->name('jenjang_pendidikan.questions.destroy');
+        Route::delete('questions_mass_destroy', [QuestionController::class, 'massDestroy'])->name('questions.mass_destroy');
+
+        // options
+        // Route::resource('jenjang_pendidikan/options', OptionController::class);
+        Route::delete('options_mass_destroy', [OptionController::class, 'massDestroy'])->name('options.mass_destroy');
+
+        // ======= Jenjang Fungsional ==========
+        // questions
+        Route::get('jenjang_fungsional/questions', [QuestionController::class, 'index_jenjang_fungsional'])->name('jenjang_fungsional.questions');
+        Route::get('jenjang_fungsional/questions/create', [QuestionController::class, 'create_jenjang_fungsional'])->name('jenjang_fungsional.questions.create');
+        Route::post('jenjang_fungsional/questions', [QuestionController::class, 'store_jenjang_fungsional'])->name('jenjang_fungsional.questions.store');
+        Route::get('jenjang_fungsional/{question}/edit', [QuestionController::class, 'edit_jenjang_fungsional'])->name('jenjang_fungsional.questions.edit');
+        Route::put('jenjang_fungsional/questions/{question}', [QuestionController::class, 'update_jenjang_fungsional'])->name('jenjang_fungsional.questions.update');
+        Route::delete('jenjang_fungsional/questions/{question}', [QuestionController::class, 'destroy_jenjang_fungsional'])->name('jenjang_fungsional.questions.destroy');
+        Route::delete('questions_mass_destroy', [QuestionController::class, 'massDestroy'])->name('questions.mass_destroy');
+
+        // options
+        // Route::resource('jenjang_fungsional/options', OptionController::class);
+        Route::delete('options_mass_destroy', [OptionController::class, 'massDestroy'])->name('options.mass_destroy');
     });
 
     Route::prefix('rektorat')->middleware('roleAs:rektorat')->group(function () {
@@ -95,6 +123,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/test', [TestController::class, 'test'])->name('dosen.test');
         Route::get('/test_pendidikan', [TestController::class, 'test_jenjang_pendidikan'])->name('dosen.test.pendidikan');
         Route::get('/test_fungsional', [TestController::class, 'test_jenjang_fungsional'])->name('dosen.test.fungsional');
+
         // Test Store
         Route::post('/test', [TestController::class, 'store'])->name('dosen.test.store');
         Route::post('/test_pendidikan', [TestController::class, 'store_jenjang_pendidikan'])->name('dosen.test.store.pendidikan');
@@ -103,7 +132,7 @@ Route::group(['middleware' => 'auth'], function () {
         // Delete
         Route::delete('/result_destroy/{result_id}', [TestController::class, 'destroy'])->name('dosen.result.destroy');
 
-        Route::resource('/jenjangpendidikan', JenjangPendidikanController::class);
-        Route::resource('/jenjangfungsional', JenjangFungsionalController::class);
+        // Route::resource('/jenjangpendidikan', JenjangPendidikanController::class);
+        // Route::resource('/jenjangfungsional', JenjangFungsionalController::class);
     });
 });

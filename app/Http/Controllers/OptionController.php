@@ -22,6 +22,24 @@ class OptionController extends Controller
         return view('admin.option.index', compact('data', 'options'));
     }
 
+    public function index_jenjang_pendidikan(): View
+    {
+        $data = auth()->user();
+
+        $options = Option::all();
+
+        return view('admin.option.index', compact('data', 'options'));
+    }
+
+    public function index_jenjang_fungsional(): View
+    {
+        $data = auth()->user();
+
+        $options = Option::all();
+
+        return view('admin.option.index', compact('data', 'options'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
