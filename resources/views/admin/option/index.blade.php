@@ -10,6 +10,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Kategori</th>
                             <th>Pertanyaan</th>
                             <th>Jawaban</th>
                             <th>Nilai</th>
@@ -20,6 +21,7 @@
                         @foreach ($options as $op)
                             <tr>
                                 <td>{{ $loop->index + 1 }}.</td>
+                                <td>{{ $op->category->name }}</td>
                                 <td>{{ $op->question->question_text }}</td>
                                 <td>{{ $op->option_text }}</td>
                                 <td>{{ $op->point }}</td>

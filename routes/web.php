@@ -78,8 +78,17 @@ Route::group(['middleware' => 'auth'], function () {
         Route::delete('questions_mass_destroy', [QuestionController::class, 'massDestroy'])->name('questions.mass_destroy');
 
         // options
-        // Route::resource('jenjang_pendidikan/options', OptionController::class);
+        Route::get('jenjang_pendidikan/options', [OptionController::class, 'index_jenjang_pendidikan'])->name('jenjang_pendidikan.options');
+        Route::get('jenjang_pendidikan/options/create', [OptionController::class, 'create_jenjang_pendidikan'])->name('jenjang_pendidikan.options.create');
+        Route::post('jenjang_pendidikan/options', [OptionController::class, 'store_jenjang_pendidikan'])->name('jenjang_pendidikan.options.store');
+        Route::get('jenjang_pendidikan/options/{options}/edit', [OptionController::class, 'edit_jenjang_pendidikan'])->name('jenjang_pendidikan.options.edit');
+        Route::put('jenjang_pendidikan/options/{question}', [OptionController::class, 'update_jenjang_pendidikan'])->name('jenjang_pendidikan.options.update');
+        Route::delete('jenjang_pendidikan/options/{options}', [OptionController::class, 'destroy_jenjang_pendidikan'])->name('jenjang_pendidikan.options.destroy');
         Route::delete('options_mass_destroy', [OptionController::class, 'massDestroy'])->name('options.mass_destroy');
+
+        // Result
+        Route::get('jenjang_pendidikan/results', [ResultController::class, 'index_jenjang_pendidikan'])->name('jenjang_pendidikan.options');
+
 
         // ======= Jenjang Fungsional ==========
         // questions
@@ -92,8 +101,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::delete('questions_mass_destroy', [QuestionController::class, 'massDestroy'])->name('questions.mass_destroy');
 
         // options
-        // Route::resource('jenjang_fungsional/options', OptionController::class);
+        Route::get('jenjang_fungsional/options', [OptionController::class, 'index_jenjang_fungsional'])->name('jenjang_fungsional.options');
+        Route::get('jenjang_fungsional/options/create', [OptionController::class, 'create_jenjang_fungsional'])->name('jenjang_fungsional.options.create');
+        Route::post('jenjang_fungsional/options', [OptionController::class, 'store_jenjang_fungsional'])->name('jenjang_fungsional.options.store');
+        Route::get('jenjang_fungsional/options/{options}/edit', [OptionController::class, 'edit_jenjang_fungsional'])->name('jenjang_fungsional.options.edit');
+        Route::put('jenjang_fungsional/options/{question}', [OptionController::class, 'update_jenjang_fungsional'])->name('jenjang_fungsional.options.update');
+        Route::delete('jenjang_fungsional/options/{options}', [OptionController::class, 'destroy_jenjang_fungsional'])->name('jenjang_fungsional.options.destroy');
         Route::delete('options_mass_destroy', [OptionController::class, 'massDestroy'])->name('options.mass_destroy');
+
+        // Result
+        Route::get('jenjang_fungsional/results', [ResultController::class, 'index_jenjang_fungsional'])->name('jenjang_pendidikan.options');
     });
 
     Route::prefix('rektorat')->middleware('roleAs:rektorat')->group(function () {

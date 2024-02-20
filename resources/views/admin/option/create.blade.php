@@ -8,6 +8,14 @@
                 <form action="/admin/options" method="POST">
                     @csrf
                     <div class="mb-3">
+                        <label for="question_text" class="form-label">Kategori</label>
+                        <select class="form-control" name="category_id" id="category_id">
+                            @foreach ($categories as $id => $category)
+                                <option value="{{ $id }}">{{ $category }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label for="question_id" class="form-label">Pertanyaan</label>
                         <select class="form-control" name="question_id" id="question_id">
                             @foreach ($questions as $id => $question)

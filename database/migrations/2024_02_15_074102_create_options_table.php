@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Question;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('options', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Category::class)->constrained()->cascadeOnUpdate();
             $table->foreignIdFor(Question::class)->constrained()->cascadeOnUpdate();
             $table->longText('option_text');
             $table->double('point')->nullable();

@@ -1,11 +1,11 @@
-@extends('dosen.layouts.main')
+@extends('admin.layouts.main')
 
-@section('content-dosen')
+@section('content-admin')
     <div class="container-fluid pt-4 px-4">
         <div class="col-12">
             <div class="bg-light rounded h-100 p-4">
-                <h5 class="mb-4">Hasil Test</h5>
-                <a href="/dosen/test" class="btn btn-outline-primary mb-2">Mulai Survey</a>
+                <h5 class="mb-4">Hasil Penilaian Jenjang Pendidikan</h5>
+                {{-- <a href="categories/create" class="btn btn-outline-primary mb-2">Tambah Data</a> --}}
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
@@ -36,14 +36,14 @@
                                 </td> --}}
                                 <td>
                                     <div class="btn-group btn-group-sm">
-                                        <a href="{{ route('dosen.result.show', $result->id) }}" class="btn btn-success">
+                                        <a href="{{ route('results.show', $result->id) }}" class="btn btn-success">
                                             <i class="fa fa-eye"></i>
                                         </a>
                                         {{-- <a href="{{ route('results.edit', $result->id) }}" class="btn btn-info">
                                             <i class="fa fa-pencil-alt"></i>
                                         </a> --}}
-                                        <form onclick="return confirm('yakin ingin menghapus ? ')" class="d-inline"
-                                            action="{{ route('dosen.result.destroy', $result->id) }}" method="POST">
+                                        <form onclick="return confirm('are you sure ? ')" class="d-inline"
+                                            action="{{ route('results.destroy', $result->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger"

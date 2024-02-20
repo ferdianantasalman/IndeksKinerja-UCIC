@@ -5,8 +5,16 @@
         <div class="col-12">
             <div class="bg-light rounded h-100 p-4">
                 <h5 class="mb-4">Tambah Pertanyaan</h5>
-                <form action="/admin/options" method="POST">
+                <form action="/admin/jenjang_pendidikan/options" method="POST">
                     @csrf
+                    <div class="mb-3">
+                        <label for="question_text" class="form-label">Kategori</label>
+                        <select class="form-control" name="category_id" id="category_id">
+                            @foreach ($categories as $id => $category)
+                                <option value="{{ $id }}">{{ $category }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="mb-3">
                         <label for="question_id" class="form-label">Pertanyaan</label>
                         <select class="form-control" name="question_id" id="question_id">
@@ -26,7 +34,7 @@
                             value=" {{ old('point') }}">
                     </div>
                     {{-- <div class="row"> --}}
-                    <a href="/admin/options" class="btn btn-primary">Kembali</a>
+                    <a href="/admin/jenjang_pendidikan/options" class="btn btn-primary">Kembali</a>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                     {{-- </div> --}}
                 </form>

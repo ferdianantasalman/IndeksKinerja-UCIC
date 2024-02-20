@@ -4,12 +4,13 @@
     <div class="container-fluid pt-4 px-4">
         <div class="col-12">
             <div class="bg-light rounded h-100 p-4">
-                <h5 class="mb-4">Jawaban</h5>
+                <h5 class="mb-4">Jawaban Jenjang Fungsional</h5>
                 <a href="options/create" class="btn btn-outline-primary mb-2">Tambah Data</a>
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Kategori</th>
                             <th>Pertanyaan</th>
                             <th>Jawaban</th>
                             <th>Nilai</th>
@@ -20,14 +21,16 @@
                         @foreach ($options as $op)
                             <tr>
                                 <td>{{ $loop->index + 1 }}.</td>
+                                <td>{{ $op->category->name }}</td>
                                 <td>{{ $op->question->question_text }}</td>
                                 <td>{{ $op->option_text }}</td>
                                 <td>{{ $op->point }}</td>
                                 <td>
                                     <div class="btn-group btn-group-sm">
-                                        <a href="{{ route('options.edit', $op->id) }}"
+                                        <a href="{{ route('jenjang_fungsional.options.edit', $op->id) }}"
                                             class="btn btn-square btn-primary m-2"><i class="fa fa-pen"></i></a>
-                                        <form action="{{ route('options.destroy', $op->id) }}" method="POST">
+                                        <form action="{{ route('jenjang_fungsional.options.destroy', $op->id) }}"
+                                            method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"

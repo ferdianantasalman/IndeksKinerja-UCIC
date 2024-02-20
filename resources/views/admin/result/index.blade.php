@@ -12,6 +12,7 @@
                             <th>No</th>
                             <th>User</th>
                             <th>Nilai</th>
+                            <th>Kategori</th>
                             <th>Pertanyaan</th>
                             {{-- <th>Jawaban</th> --}}
                             <th>Aksi</th>
@@ -23,6 +24,7 @@
                                 <td>{{ $loop->index + 1 }}.</td>
                                 <td>{{ $result->user->name }}</td>
                                 <td>{{ $result->total_points }}</td>
+                                <td>{{ $result->category }}</td>
                                 <td>
                                     @foreach ($result->questions as $question)
                                         <span>{{ $question->question_text }}, </span>

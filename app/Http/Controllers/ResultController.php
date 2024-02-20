@@ -22,6 +22,24 @@ class ResultController extends Controller
         return view('admin.result.index', compact('data', 'results'));
     }
 
+    public function index_jenjang_pendidikan(): View
+    {
+        $data = auth()->user();
+
+        $results = Result::where('category', '=', 'Jenjang Pendidikan')->get();
+
+        return view('admin.jenjang_pendidikan.result.index', compact('data', 'results'));
+    }
+
+    public function index_jenjang_fungsional(): View
+    {
+        $data = auth()->user();
+
+        $results = Result::where('category', '=', 'Jenjang Fungsional')->get();
+
+        return view('admin.jenjang_fungsional.result.index', compact('data', 'results'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -33,8 +33,8 @@
                         class="fa fa-laptop me-2"></i>Pendidikan</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="/admin/jenjang_pendidikan/questions" class="dropdown-item">Pertanyaan</a>
-                    <a href="button.html" class="dropdown-item">Jawaban</a>
-                    <a href="button.html" class="dropdown-item">Hasil</a>
+                    <a href="/admin/jenjang_pendidikan/options" class="dropdown-item">Jawaban</a>
+                    <a href="/admin/jenjang_pendidikan/results" class="dropdown-item">Hasil</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
@@ -42,8 +42,8 @@
                         class="fa fa-laptop me-2"></i>Fungsional</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="/admin/jenjang_fungsional/questions" class="dropdown-item">Pertanyaan</a>
-                    <a href="button.html" class="dropdown-item">Jawaban</a>
-                    <a href="button.html" class="dropdown-item">Hasil</a>
+                    <a href="/admin/jenjang_fungsional/options" class="dropdown-item">Jawaban</a>
+                    <a href="/admin/jenjang_fungsional/results" class="dropdown-item">Hasil</a>
                 </div>
             </div>
         </div>
