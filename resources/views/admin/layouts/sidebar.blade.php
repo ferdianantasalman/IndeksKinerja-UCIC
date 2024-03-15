@@ -19,15 +19,28 @@
         <div class="navbar-nav w-100">
             <a href="/admin/dashboard" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-            <a href="/admin/bobotnilai" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>
-                Nilai</a>
-            <a href="/admin/categories" class="nav-item nav-link active"><i
+            <a href="/admin/dashboard" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Akses
+                Pengguna</a>
+
+            {{-- <a href="/admin/bobotnilai" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>
+                Nilai</a> --}}
+            {{-- <a href="/admin/categories" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Kategori</a>
             <a href="/admin/questions" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Pertanyaan</a>
             <a href="/admin/options" class="nav-item nav-link active"><i
                     class="fa fa-tachometer-alt me-2"></i>Jawaban</a>
-            <a href="/admin/results" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Hasil</a>
+            <a href="/admin/results" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Hasil</a> --}}
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+                        class="fa fa-laptop me-2"></i>General</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="/admin/categories" class="dropdown-item">Kategori</a>
+                    <a href="/admin/questions" class="dropdown-item">Pertanyaan</a>
+                    <a href="/admin/options" class="dropdown-item">Jawaban</a>
+                    <a href="/admin/results" class="dropdown-item">Hasil</a>
+                </div>
+            </div>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                         class="fa fa-laptop me-2"></i>Pendidikan</a>

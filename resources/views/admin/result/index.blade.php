@@ -14,7 +14,8 @@
                             <th>Nilai</th>
                             <th>Kategori</th>
                             <th>Pertanyaan</th>
-                            {{-- <th>Jawaban</th> --}}
+                            <th>Jawaban</th>
+                            <th>Penilai</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -30,10 +31,17 @@
                                         <span>{{ $question->question_text }}, </span>
                                     @endforeach
                                 </td>
-                                {{-- <td>{{ $result->options }}</td> --}}
+                                <td></td>
+                                <td></td>
+                                {{-- <td>
+                                    @foreach ($result->option as $option)
+                                        <span>{{ $option->option_text }}, </span>
+                                    @endforeach
+                                    {{ $result->option as $option }}
+                                </td> --}}
                                 {{-- <td>
                                     @foreach ($result->questions as $key => $question)
-                                        <span class="badge badge-info">{{ $question->question_text }}</span>
+                                        <span>{{ $question->question_text }}</span>
                                     @endforeach
                                 </td> --}}
                                 <td>

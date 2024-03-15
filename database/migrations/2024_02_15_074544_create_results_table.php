@@ -15,8 +15,12 @@ return new class extends Migration
         Schema::create('results', function (Blueprint $table) {
             $table->id();
             $table->string('category');
+            // $table->string('category')->nullable();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnUpdate();
+            // $table->foreignIdFor(User::class)->constrained()->cascadeOnUpdate()->nullable();
             $table->integer('total_points')->nullable();
+            // $table->integer('pengisi')->nullable();
+            // $table->integer('penilai')->nullable();
             $table->timestamps();
         });
     }
